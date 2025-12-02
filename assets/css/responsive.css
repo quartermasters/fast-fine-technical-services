@@ -1,0 +1,637 @@
+/**
+ * Fast and Fine Technical Services FZE - Responsive Styles
+ *
+ * Mobile-First approach with breakpoints:
+ * - Mobile: < 640px (default)
+ * - Tablet: 640px - 1024px
+ * - Desktop: > 1024px
+ *
+ * @package FastAndFine
+ * @version 1.0.0
+ */
+
+/* ============================================================================
+   BREAKPOINT VARIABLES
+   ============================================================================ */
+
+:root {
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+}
+
+/* ============================================================================
+   MOBILE FIRST (Default < 640px)
+   ============================================================================ */
+
+/* Header adjustments for mobile */
+.header-top {
+    display: none;
+}
+
+.header-main {
+    padding: 0.75rem 0;
+}
+
+.logo-text small {
+    display: none;
+}
+
+.nav-menu,
+.header-cta {
+    display: none;
+}
+
+.mobile-menu-toggle {
+    display: flex !important;
+}
+
+/* Mobile Menu */
+.mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: var(--z-modal-backdrop);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 85%;
+    max-width: 350px;
+    height: 100%;
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-xl);
+    z-index: var(--z-modal);
+    transform: translateX(100%);
+    transition: transform var(--transition-base);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.rtl .mobile-menu {
+    right: auto;
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.mobile-menu-overlay.active .mobile-menu {
+    transform: translateX(0);
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-menu-close {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-xl);
+    color: var(--text-primary);
+}
+
+.mobile-nav {
+    flex: 1;
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 1rem;
+    color: var(--text-primary);
+    font-weight: var(--font-medium);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+    background: var(--color-cyan);
+    color: var(--color-white);
+}
+
+.mobile-menu-cta {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    border-top: 1px solid var(--border-color);
+}
+
+.mobile-menu-contact {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    background: var(--bg-secondary);
+}
+
+.mobile-contact-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--text-primary);
+    font-size: var(--text-sm);
+}
+
+/* Section spacing for mobile */
+section {
+    padding: var(--spacing-2xl) 0;
+}
+
+.section-title {
+    font-size: var(--text-3xl);
+}
+
+/* Footer adjustments */
+.footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+}
+
+.newsletter-content {
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    font-size: var(--text-sm);
+    padding: 0.625rem 1.25rem;
+}
+
+/* WhatsApp button */
+.whatsapp-float {
+    width: 50px;
+    height: 50px;
+    font-size: var(--text-xl);
+    bottom: 20px;
+    right: 20px;
+}
+
+.rtl .whatsapp-float {
+    right: auto;
+    left: 20px;
+}
+
+/* ============================================================================
+   SMALL DEVICES (≥ 640px)
+   ============================================================================ */
+
+@media (min-width: 640px) {
+    .container {
+        padding-left: var(--spacing-lg);
+        padding-right: var(--spacing-lg);
+    }
+
+    .section-title {
+        font-size: var(--text-4xl);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .newsletter-content {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .mobile-menu {
+        max-width: 400px;
+    }
+
+    .btn {
+        font-size: var(--text-base);
+        padding: 0.75rem 1.5rem;
+    }
+}
+
+/* ============================================================================
+   MEDIUM DEVICES (≥ 768px) - Tablets
+   ============================================================================ */
+
+@media (min-width: 768px) {
+    /* Show header top bar */
+    .header-top {
+        display: block;
+    }
+
+    .header-main {
+        padding: 1rem 0;
+    }
+
+    /* Logo */
+    .logo-text small {
+        display: block;
+    }
+
+    /* Section spacing */
+    section {
+        padding: var(--spacing-3xl) 0;
+    }
+
+    .section-title {
+        font-size: var(--text-5xl);
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-bottom-content {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    /* WhatsApp button */
+    .whatsapp-float {
+        width: 60px;
+        height: 60px;
+        font-size: var(--text-2xl);
+        bottom: 30px;
+        right: 30px;
+    }
+
+    .rtl .whatsapp-float {
+        right: auto;
+        left: 30px;
+    }
+
+    /* Cards */
+    .card-grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================================================
+   LARGE DEVICES (≥ 1024px) - Desktop
+   ============================================================================ */
+
+@media (min-width: 1024px) {
+    /* Header */
+    .nav-menu {
+        display: flex !important;
+    }
+
+    .header-cta {
+        display: flex !important;
+    }
+
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+
+    /* Container */
+    .container {
+        padding-left: var(--spacing-xl);
+        padding-right: var(--spacing-xl);
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    }
+
+    /* Card grids */
+    .card-grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card-grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Hero section */
+    .hero-content {
+        max-width: 50%;
+    }
+
+    /* Typography */
+    h1 { font-size: var(--text-6xl); }
+    h2 { font-size: var(--text-5xl); }
+
+    /* Hover effects enabled */
+    .hover-effect {
+        transition: all var(--transition-base);
+    }
+
+    .hover-effect:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-xl);
+    }
+}
+
+/* ============================================================================
+   EXTRA LARGE DEVICES (≥ 1280px)
+   ============================================================================ */
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: var(--container-max-width);
+    }
+
+    .section-title {
+        font-size: var(--text-6xl);
+    }
+}
+
+/* ============================================================================
+   2XL DEVICES (≥ 1536px)
+   ============================================================================ */
+
+@media (min-width: 1536px) {
+    :root {
+        --header-height: 90px;
+    }
+
+    .container {
+        max-width: 1440px;
+    }
+}
+
+/* ============================================================================
+   LANDSCAPE ORIENTATION
+   ============================================================================ */
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .mobile-menu {
+        width: 50%;
+        max-width: 400px;
+    }
+
+    section {
+        padding: var(--spacing-xl) 0;
+    }
+}
+
+/* ============================================================================
+   TOUCH DEVICES
+   ============================================================================ */
+
+@media (hover: none) and (pointer: coarse) {
+    /* Disable hover effects on touch devices */
+    .hover-lift:hover {
+        transform: none;
+    }
+
+    .hover-grow:hover {
+        transform: none;
+    }
+
+    /* Larger touch targets */
+    .btn {
+        min-height: 44px;
+    }
+
+    a, button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Remove tooltips on touch devices */
+    [title] {
+        position: relative;
+    }
+
+    [title]::after {
+        display: none !important;
+    }
+}
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+
+@media print {
+    /* Hide non-essential elements */
+    .header-top,
+    .mobile-menu-toggle,
+    .whatsapp-float,
+    .back-to-top,
+    .footer-newsletter,
+    .footer-social {
+        display: none !important;
+    }
+
+    /* Optimize for print */
+    body {
+        font-size: 12pt;
+        color: #000;
+        background: #fff;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    /* Avoid page breaks */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+    }
+
+    img {
+        max-width: 100%;
+        page-break-inside: avoid;
+    }
+
+    /* Show links */
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+}
+
+/* ============================================================================
+   HIGH CONTRAST MODE
+   ============================================================================ */
+
+@media (prefers-contrast: high) {
+    :root {
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-outline {
+        border-width: 3px;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+/* ============================================================================
+   DARK MODE PREFERENCES
+   ============================================================================ */
+
+@media (prefers-color-scheme: dark) {
+    /* Auto dark mode if user preference is dark and theme not manually set */
+    body:not([data-theme]) {
+        --bg-primary: var(--color-gray-900);
+        --bg-secondary: var(--color-gray-800);
+        --text-primary: var(--color-gray-50);
+        --text-secondary: var(--color-gray-300);
+    }
+}
+
+/* ============================================================================
+   REDUCED MOTION
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+
+/* ============================================================================
+   UTILITY RESPONSIVE CLASSES
+   ============================================================================ */
+
+/* Hide/Show on different breakpoints */
+.hide-mobile {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .hide-mobile {
+        display: block;
+    }
+    .hide-tablet {
+        display: none;
+    }
+    .show-mobile {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hide-desktop {
+        display: none;
+    }
+    .hide-tablet {
+        display: block;
+    }
+    .show-tablet {
+        display: none;
+    }
+}
+
+/* Flex direction responsive */
+@media (max-width: 767px) {
+    .flex-col-mobile {
+        flex-direction: column;
+    }
+}
+
+/* Text alignment responsive */
+@media (max-width: 767px) {
+    .text-center-mobile {
+        text-align: center;
+    }
+}
+
+/* ============================================================================
+   RTL RESPONSIVE ADJUSTMENTS
+   ============================================================================ */
+
+.rtl .mobile-menu {
+    right: auto;
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.rtl .mobile-menu-overlay.active .mobile-menu {
+    transform: translateX(0);
+}
+
+@media (min-width: 768px) {
+    .rtl .header-contact {
+        flex-direction: row-reverse;
+    }
+
+    .rtl .header-actions {
+        flex-direction: row-reverse;
+    }
+}
+
+@media (min-width: 1024px) {
+    .rtl .nav-menu {
+        flex-direction: row-reverse;
+    }
+
+    .rtl .header-cta {
+        flex-direction: row-reverse;
+    }
+}
+
+/* ============================================================================
+   CONTAINER QUERIES (Modern Browsers)
+   ============================================================================ */
+
+@supports (container-type: inline-size) {
+    .card-container {
+        container-type: inline-size;
+    }
+
+    @container (min-width: 400px) {
+        .card-responsive {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+    }
+}
