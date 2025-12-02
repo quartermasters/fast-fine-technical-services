@@ -1,9 +1,8 @@
 <?php
 /**
- * Fast and Fine Technical Services FZE - Admin Dashboard Entry Point
+ * Fast and Fine Technical Services FZE - Admin Index
  *
- * Main admin panel landing page.
- * Full dashboard will be implemented in dashboard.php
+ * Redirects to dashboard.php
  *
  * @package FastAndFine
  * @version 1.0.0
@@ -14,13 +13,16 @@ define('FAST_FINE_APP', true);
 
 // Load dependencies
 require_once __DIR__ . '/../config.php';
-require_once __DIR__ . '/../includes/db-connect.php';
 require_once __DIR__ . '/../includes/security.php';
 require_once __DIR__ . '/../includes/functions.php';
 require_once __DIR__ . '/auth.php';
 
 // Require admin authentication
 requireAdminLogin();
+
+// Redirect to dashboard
+header('Location: ' . siteUrl('admin/dashboard.php'));
+exit;
 
 // Get current admin user
 $admin = getCurrentAdmin();
