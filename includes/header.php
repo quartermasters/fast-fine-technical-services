@@ -77,10 +77,16 @@ $isRTL = isRTL();
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="<?php echo assetUrl('css/main.css'); ?>">
-    <link rel="stylesheet" href="<?php echo assetUrl('css/sections.css'); ?>">
-    <link rel="stylesheet" href="<?php echo assetUrl('css/animations.css'); ?>">
-    <link rel="stylesheet" href="<?php echo assetUrl('css/responsive.css'); ?>">
+    <?php if (ENVIRONMENT === 'production'): ?>
+        <!-- Production: Minified CSS Bundle -->
+        <link rel="stylesheet" href="<?php echo assetUrl('build/app.min.css'); ?>">
+    <?php else: ?>
+        <!-- Development: Individual CSS Files -->
+        <link rel="stylesheet" href="<?php echo assetUrl('css/main.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('css/sections.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('css/animations.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('css/responsive.css'); ?>">
+    <?php endif; ?>
 
     <!-- CSRF Token -->
     <?php echo csrfMeta(); ?>

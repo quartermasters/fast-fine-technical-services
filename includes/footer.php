@@ -213,12 +213,17 @@ if(!defined('FAST_FINE_APP')) {
 </footer>
 
 <!-- Scripts -->
-<script src="<?php echo assetUrl('js/main.js'); ?>"></script>
-<script src="<?php echo assetUrl('js/animations.js'); ?>"></script>
-<script src="<?php echo assetUrl('js/services.js'); ?>"></script>
-<script src="<?php echo assetUrl('js/portfolio.js'); ?>"></script>
-<script src="<?php echo assetUrl('js/testimonials.js'); ?>"></script>
-<script src="<?php echo assetUrl('js/booking.js'); ?>"></script>
+<?php if (ENVIRONMENT === 'production'): ?>
+    <!-- Production: Minified JS Bundle -->
+    <script src="<?php echo assetUrl('build/app.min.js'); ?>"></script>
+<?php else: ?>
+    <!-- Development: Individual JS Files -->
+    <script src="<?php echo assetUrl('js/main.js'); ?>"></script>
+    <script src="<?php echo assetUrl('js/services.js'); ?>"></script>
+    <script src="<?php echo assetUrl('js/portfolio.js'); ?>"></script>
+    <script src="<?php echo assetUrl('js/testimonials.js'); ?>"></script>
+    <script src="<?php echo assetUrl('js/booking.js'); ?>"></script>
+<?php endif; ?>
 
 <?php if(FEATURE_LIVE_CHAT): ?>
 <!-- WhatsApp Chat Widget Script -->

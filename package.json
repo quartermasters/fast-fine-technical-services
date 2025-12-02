@@ -1,0 +1,23 @@
+{
+  "name": "fast-fine-website",
+  "version": "1.0.0",
+  "description": "Fast and Fine Technical Services FZE - Professional Website",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "build:css": "node build.js css",
+    "build:js": "node build.js js",
+    "build:prod": "NODE_ENV=production node build.js",
+    "watch": "node build.js watch"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.2",
+    "terser": "^5.19.2",
+    "chokidar": "^3.5.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "author": "Fast and Fine Technical Services FZE",
+  "license": "UNLICENSED"
+}
