@@ -78,6 +78,7 @@ $isRTL = isRTL();
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="<?php echo assetUrl('css/main.css'); ?>">
+    <link rel="stylesheet" href="<?php echo assetUrl('css/sections.css'); ?>">
     <link rel="stylesheet" href="<?php echo assetUrl('css/animations.css'); ?>">
     <link rel="stylesheet" href="<?php echo assetUrl('css/responsive.css'); ?>">
 
