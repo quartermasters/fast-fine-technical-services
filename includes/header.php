@@ -95,6 +95,83 @@ $isRTL = isRTL();
         gtag('config', '<?php echo GOOGLE_ANALYTICS_ID; ?>');
     </script>
     <?php endif; ?>
+
+    <!-- Schema.org JSON-LD Markup for LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "<?php echo SITE_URL; ?>",
+        "name": "<?php echo SITE_NAME; ?>",
+        "alternateName": "Fast & Fine",
+        "url": "<?php echo SITE_URL; ?>",
+        "logo": "<?php echo assetUrl('images/logo.png'); ?>",
+        "image": "<?php echo SEO_OG_IMAGE; ?>",
+        "description": "<?php echo SEO_DESCRIPTION; ?>",
+        "slogan": "<?php echo SITE_TAGLINE; ?>",
+        "telephone": "<?php echo WHATSAPP_NUMBER; ?>",
+        "email": "<?php echo ADMIN_EMAIL; ?>",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dubai",
+            "addressRegion": "Dubai",
+            "addressCountry": "AE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "25.2048",
+            "longitude": "55.2708"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "00:00",
+                "closes": "23:59"
+            }
+        ],
+        "sameAs": [
+            <?php if(FACEBOOK_URL): ?>"<?php echo FACEBOOK_URL; ?>",<?php endif; ?>
+            <?php if(INSTAGRAM_URL): ?>"<?php echo INSTAGRAM_URL; ?>",<?php endif; ?>
+            <?php if(TWITTER_URL): ?>"<?php echo TWITTER_URL; ?>",<?php endif; ?>
+            <?php if(LINKEDIN_URL): ?>"<?php echo LINKEDIN_URL; ?>",<?php endif; ?>
+            "https://wa.me/<?php echo str_replace(['+', '-', ' '], '', WHATSAPP_NUMBER); ?>"
+        ],
+        "priceRange": "AED 100 - AED 5000",
+        "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+        "currenciesAccepted": "AED",
+        "areaServed": {
+            "@type": "City",
+            "name": "Dubai"
+        },
+        "serviceType": [
+            "Building Cleaning",
+            "Carpentry Services",
+            "Plumbing Services",
+            "Air Conditioning Services",
+            "Electromechanical Services",
+            "Painting Services",
+            "Electrical Services",
+            "Gypsum and Partition Services",
+            "Tiling Services"
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "250",
+            "bestRating": "5",
+            "worstRating": "1"
+        }
+    }
+    </script>
 </head>
 <body class="<?php echo $isRTL ? 'rtl' : 'ltr'; ?>" data-theme="light">
 
