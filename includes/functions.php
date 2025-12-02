@@ -315,37 +315,204 @@ function sendEmailPHP($to, $subject, $body, $from, $fromName, $replyTo) {
 }
 
 /**
- * Send email using SendGrid API
+ * Send email using SendGrid API v3
  *
- * @param string $to
- * @param string $subject
- * @param string $body
- * @param string $from
- * @param string $fromName
- * @param string $replyTo
- * @return bool
+ * @param string $to Recipient email address
+ * @param string $subject Email subject
+ * @param string $body HTML email body
+ * @param string $from Sender email address
+ * @param string $fromName Sender name
+ * @param string $replyTo Reply-to email address
+ * @return bool Success status
  */
 function sendEmailSendGrid($to, $subject, $body, $from, $fromName, $replyTo) {
-    // Implementation would use SendGrid API
-    // For now, fallback to PHP mail
-    return sendEmailPHP($to, $subject, $body, $from, $fromName, $replyTo);
+    // Check if SendGrid is configured
+    if (!defined('SENDGRID_API_KEY') || SENDGRID_API_KEY === 'YOUR_SENDGRID_API_KEY') {
+        if (isDebugMode()) {
+            error_log('[SENDGRID] API key not configured, falling back to PHP mail');
+        }
+        return sendEmailPHP($to, $subject, $body, $from, $fromName, $replyTo);
+    }
+
+    try {
+        // Prepare SendGrid API request
+        $url = 'https://api.sendgrid.com/v3/mail/send';
+
+        // Build email payload according to SendGrid API v3 schema
+        $payload = [
+            'personalizations' => [
+                [
+                    'to' => [
+                        ['email' => $to]
+                    ],
+                    'subject' => $subject
+                ]
+            ],
+            'from' => [
+                'email' => $from,
+                'name' => $fromName
+            ],
+            'reply_to' => [
+                'email' => $replyTo
+            ],
+            'content' => [
+                [
+                    'type' => 'text/html',
+                    'value' => $body
+                ]
+            ],
+            'tracking_settings' => [
+                'click_tracking' => ['enable' => true],
+                'open_tracking' => ['enable' => true]
+            ]
+        ];
+
+        // Initialize cURL
+        $ch = curl_init($url);
+
+        // Set cURL options
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => json_encode($payload),
+            CURLOPT_HTTPHEADER => [
+                'Authorization: Bearer ' . SENDGRID_API_KEY,
+                'Content-Type: application/json'
+            ],
+            CURLOPT_TIMEOUT => 10,
+            CURLOPT_SSL_VERIFYPEER => true
+        ]);
+
+        // Execute request
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $curlError = curl_error($ch);
+        curl_close($ch);
+
+        // Check for cURL errors
+        if ($curlError) {
+            throw new Exception("cURL error: {$curlError}");
+        }
+
+        // Check HTTP status code (202 = Accepted)
+        if ($httpCode !== 202) {
+            $errorMsg = "SendGrid API returned HTTP {$httpCode}";
+            if ($response) {
+                $responseData = json_decode($response, true);
+                if (isset($responseData['errors'])) {
+                    $errorMsg .= ': ' . json_encode($responseData['errors']);
+                }
+            }
+            throw new Exception($errorMsg);
+        }
+
+        // Log success
+        if (isDebugMode()) {
+            error_log("[SENDGRID] Email sent successfully to {$to}: {$subject}");
+        }
+
+        return true;
+
+    } catch (Exception $e) {
+        error_log("[SENDGRID ERROR] Failed to send email to {$to}: " . $e->getMessage());
+
+        // Fallback to PHP mail if SendGrid fails
+        if (isDebugMode()) {
+            error_log("[SENDGRID] Falling back to PHP mail");
+        }
+        return sendEmailPHP($to, $subject, $body, $from, $fromName, $replyTo);
+    }
 }
 
 /**
  * Send email using Mailgun API
  *
- * @param string $to
- * @param string $subject
- * @param string $body
- * @param string $from
- * @param string $fromName
- * @param string $replyTo
- * @return bool
+ * @param string $to Recipient email address
+ * @param string $subject Email subject
+ * @param string $body HTML email body
+ * @param string $from Sender email address
+ * @param string $fromName Sender name
+ * @param string $replyTo Reply-to email address
+ * @return bool Success status
  */
 function sendEmailMailgun($to, $subject, $body, $from, $fromName, $replyTo) {
-    // Implementation would use Mailgun API
-    // For now, fallback to PHP mail
-    return sendEmailPHP($to, $subject, $body, $from, $fromName, $replyTo);
+    // Check if Mailgun is configured
+    if (!defined('MAILGUN_API_KEY') || MAILGUN_API_KEY === 'YOUR_MAILGUN_API_KEY' ||
+        !defined('MAILGUN_DOMAIN') || MAILGUN_DOMAIN === 'YOUR_MAILGUN_DOMAIN') {
+        if (isDebugMode()) {
+            error_log('[MAILGUN] API key or domain not configured, falling back to PHP mail');
+        }
+        return sendEmailPHP($to, $subject, $body, $from, $fromName, $replyTo);
+    }
+
+    try {
+        // Mailgun API endpoint
+        $url = 'https://api.mailgun.net/v3/' . MAILGUN_DOMAIN . '/messages';
+
+        // Prepare form data
+        $postData = [
+            'from' => "{$fromName} <{$from}>",
+            'to' => $to,
+            'subject' => $subject,
+            'html' => $body,
+            'h:Reply-To' => $replyTo,
+            'o:tracking' => 'yes',
+            'o:tracking-clicks' => 'yes',
+            'o:tracking-opens' => 'yes'
+        ];
+
+        // Initialize cURL
+        $ch = curl_init($url);
+
+        // Set cURL options
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => $postData,
+            CURLOPT_USERPWD => 'api:' . MAILGUN_API_KEY,
+            CURLOPT_TIMEOUT => 10,
+            CURLOPT_SSL_VERIFYPEER => true
+        ]);
+
+        // Execute request
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $curlError = curl_error($ch);
+        curl_close($ch);
+
+        // Check for cURL errors
+        if ($curlError) {
+            throw new Exception("cURL error: {$curlError}");
+        }
+
+        // Check HTTP status code (200 = Success)
+        if ($httpCode !== 200) {
+            $errorMsg = "Mailgun API returned HTTP {$httpCode}";
+            if ($response) {
+                $responseData = json_decode($response, true);
+                if (isset($responseData['message'])) {
+                    $errorMsg .= ': ' . $responseData['message'];
+                }
+            }
+            throw new Exception($errorMsg);
+        }
+
+        // Log success
+        if (isDebugMode()) {
+            error_log("[MAILGUN] Email sent successfully to {$to}: {$subject}");
+        }
+
+        return true;
+
+    } catch (Exception $e) {
+        error_log("[MAILGUN ERROR] Failed to send email to {$to}: " . $e->getMessage());
+
+        // Fallback to PHP mail if Mailgun fails
+        if (isDebugMode()) {
+            error_log("[MAILGUN] Falling back to PHP mail");
+        }
+        return sendEmailPHP($to, $subject, $body, $from, $fromName, $replyTo);
+    }
 }
 
 /**
