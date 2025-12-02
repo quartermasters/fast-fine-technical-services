@@ -1,0 +1,302 @@
+# Fast and Fine Technical Services FZE - Git Ignore File
+# This file specifies intentionally untracked files that Git should ignore
+
+# ============================================================================
+# SENSITIVE FILES (NEVER COMMIT THESE!)
+# ============================================================================
+
+# Configuration files with sensitive data
+config.php
+.env
+.env.*
+!.env.example
+
+# Database credentials
+database-credentials.txt
+db-config.php
+
+# API Keys and secrets
+api-keys.txt
+secrets.json
+credentials.json
+
+# ============================================================================
+# LOGS & TEMPORARY FILES
+# ============================================================================
+
+# Log files
+*.log
+logs/
+*.log.*
+error_log
+access_log
+php_errors.log
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Session files
+/tmp/
+/temp/
+sessions/
+*.sess
+
+# ============================================================================
+# UPLOADS & USER CONTENT
+# ============================================================================
+
+# Uploaded files (comment out if you want to track uploads)
+uploads/*
+!uploads/.gitkeep
+uploads/contact-photos/*
+!uploads/contact-photos/.gitkeep
+uploads/project-images/*
+!uploads/project-images/.gitkeep
+uploads/team-photos/*
+!uploads/team-photos/.gitkeep
+
+# ============================================================================
+# CACHE & COMPILED FILES
+# ============================================================================
+
+# Cache directories
+cache/
+*.cache
+.cache/
+
+# Compiled assets
+/assets/dist/
+/assets/build/
+*.min.css
+*.min.js
+*.map
+
+# Redis cache files
+*.rdb
+
+# ============================================================================
+# VENDOR & DEPENDENCIES
+# ============================================================================
+
+# Composer
+/vendor/
+composer.lock
+composer.phar
+
+# NPM
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Bower
+bower_components/
+
+# ============================================================================
+# IDE & EDITOR FILES
+# ============================================================================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# PhpStorm / IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# NetBeans
+nbproject/
+nbbuild/
+dist/
+nbdist/
+
+# Eclipse
+.buildpath
+.project
+.settings/
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# ============================================================================
+# OS SPECIFIC FILES
+# ============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================================================
+# BACKUPS
+# ============================================================================
+
+# Database backups
+*.sql
+*.sql.gz
+*.sql.zip
+backups/
+database-backup/
+db-backup-*/
+
+# File backups
+*.bak
+*.backup
+*.old
+*.orig
+
+# ============================================================================
+# VERSION CONTROL
+# ============================================================================
+
+# Git
+.git/
+.gitattributes
+
+# SVN
+.svn/
+
+# Mercurial
+.hg/
+
+# ============================================================================
+# BUILD & DEPLOYMENT
+# ============================================================================
+
+# Build directories
+build/
+dist/
+
+# Deployment files
+deploy.sh
+deploy-config.json
+
+# CI/CD
+.travis.yml
+.gitlab-ci.yml
+.circleci/
+.github/workflows/
+
+# ============================================================================
+# TESTING
+# ============================================================================
+
+# Test files
+/tests/tmp/
+/tests/cache/
+coverage/
+.phpunit.result.cache
+
+# ============================================================================
+# DOCUMENTATION (OPTIONAL)
+# ============================================================================
+
+# Uncomment if you don't want to track documentation
+# /docs/
+# *.md
+# !README.md
+
+# ============================================================================
+# PROJECT SPECIFIC
+# ============================================================================
+
+# Large files
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# Exclude certain large image files
+# *.psd
+# *.ai
+
+# Local development files
+.local/
+local-config.php
+development.ini
+
+# Production-only files (don't commit to dev)
+.htaccess.production
+robots.txt.production
+
+# ============================================================================
+# SECURITY & SSL
+# ============================================================================
+
+# SSL Certificates (NEVER commit private keys!)
+*.key
+*.pem
+*.crt
+*.cert
+*.p12
+*.pfx
+ssl-certificates/
+
+# SSH Keys
+id_rsa
+id_rsa.pub
+*.ppk
+
+# ============================================================================
+# MISCELLANEOUS
+# ============================================================================
+
+# Error reports
+error-reports/
+crash-logs/
+
+# Analytics data
+analytics-export/
+stats-export/
+
+# Email templates with sensitive data
+# /includes/email-templates/production/
+
+# Keep these placeholder files
+!.gitkeep
+!README.md
