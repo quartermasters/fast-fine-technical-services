@@ -131,20 +131,8 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 </section>
 
-<!-- Testimonials Section (Placeholder) -->
-<section id="testimonials" class="testimonials-section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title scroll-reveal">
-                <i class="fa-solid fa-star"></i>
-                <?php _e('what_clients_say'); ?>
-            </h2>
-        </div>
-        <div class="testimonials-content scroll-reveal">
-            <p>Testimonials section content coming soon...</p>
-        </div>
-    </div>
-</section>
+<!-- Testimonials Section (Live Carousel) -->
+<?php require_once __DIR__ . '/sections/testimonials-live.php'; ?>
 
 <!-- Portfolio Section (Interactive) -->
 <?php require_once __DIR__ . '/sections/projects-portfolio.php'; ?>

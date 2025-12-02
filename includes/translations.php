@@ -228,11 +228,24 @@ return [
 
         // Testimonials
         'what_clients_say' => 'What Our Clients Say',
+        'client_feedback' => 'Client Feedback',
+        'testimonials_description' => 'Hear from our satisfied clients about their experience with our services',
         'client_testimonials' => 'Client Testimonials',
         'verified_review' => 'Verified Review',
+        'verified_customer' => 'Verified Customer',
         'google_reviews' => 'Google Reviews',
+        'facebook_reviews' => 'Facebook Reviews',
         'rating' => 'Rating',
         'reviews' => 'Reviews',
+        'based_on_reviews' => 'Based on {count} reviews',
+        'toggle_autoplay' => 'Toggle Autoplay',
+        'share_experience' => 'Share Your Experience',
+        'share_experience_desc' => 'We value your feedback and would love to hear about your experience',
+        'review_on_google' => 'Review on Google',
+        'send_feedback' => 'Send Feedback',
+        'google' => 'Google',
+        'facebook' => 'Facebook',
+        'website' => 'Website',
 
         // Portfolio
         'our_portfolio' => 'Our Portfolio',
@@ -601,11 +614,24 @@ return [
 
         // Testimonials
         'what_clients_say' => 'ماذا يقول عملاؤنا',
+        'client_feedback' => 'آراء العملاء',
+        'testimonials_description' => 'اسمع من عملائنا الراضين عن تجربتهم مع خدماتنا',
         'client_testimonials' => 'آراء العملاء',
         'verified_review' => 'تقييم موثق',
+        'verified_customer' => 'عميل موثق',
         'google_reviews' => 'تقييمات جوجل',
+        'facebook_reviews' => 'تقييمات فيسبوك',
         'rating' => 'التقييم',
         'reviews' => 'التقييمات',
+        'based_on_reviews' => 'بناءً على {count} تقييم',
+        'toggle_autoplay' => 'تبديل التشغيل التلقائي',
+        'share_experience' => 'شارك تجربتك',
+        'share_experience_desc' => 'نحن نقدر ملاحظاتك ونحب أن نسمع عن تجربتك',
+        'review_on_google' => 'قيّم على جوجل',
+        'send_feedback' => 'أرسل ملاحظاتك',
+        'google' => 'جوجل',
+        'facebook' => 'فيسبوك',
+        'website' => 'الموقع',
 
         // Portfolio
         'our_portfolio' => 'معرض أعمالنا',
