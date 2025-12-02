@@ -215,6 +215,7 @@ if(!defined('FAST_FINE_APP')) {
 <!-- Scripts -->
 <script src="<?php echo assetUrl('js/main.js'); ?>"></script>
 <script src="<?php echo assetUrl('js/animations.js'); ?>"></script>
+<script src="<?php echo assetUrl('js/services.js'); ?>"></script>
 
 <?php if(FEATURE_LIVE_CHAT): ?>
 <!-- WhatsApp Chat Widget Script -->

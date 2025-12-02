@@ -360,6 +360,73 @@ section {
     }
 }
 
+/* Services Interactive Section Responsive */
+@media (max-width: 1023px) {
+    .services-controls {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+
+    .category-filter {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .filter-btn {
+        flex: 0 0 auto;
+        min-width: 120px;
+    }
+
+    .services-flip-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: var(--spacing-xl);
+    }
+}
+
+@media (max-width: 767px) {
+    .category-filter {
+        gap: var(--spacing-xs);
+    }
+
+    .filter-btn span {
+        display: none;
+    }
+
+    .filter-btn {
+        min-width: auto;
+        padding: var(--spacing-sm);
+    }
+
+    .services-flip-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .flip-card-inner {
+        min-height: 350px;
+    }
+
+    .modal-container {
+        margin: var(--spacing-md);
+        max-height: 95vh;
+    }
+
+    .service-detail-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Touch devices - disable flip on hover, enable tap to flip */
+@media (hover: none) and (pointer: coarse) {
+    .service-flip-card:hover .flip-card-inner {
+        transform: none;
+    }
+
+    .service-flip-card.flipped .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+}
+
 /* Contact Section Responsive */
 @media (max-width: 1023px) {
     .contact-grid {

@@ -70,6 +70,8 @@ return [
 
         // Services
         'our_services' => 'Our Services',
+        'what_we_offer' => 'What We Offer',
+        'services_description' => 'Professional technical services for residential and commercial properties in Dubai',
         'all_services' => 'All Services',
         'residential' => 'Residential',
         'commercial' => 'Commercial',
@@ -78,6 +80,22 @@ return [
         'starting_from' => 'Starting from',
         'view_details' => 'View Details',
         'service_details' => 'Service Details',
+        'search_services' => 'Search services...',
+        'flip_to_learn_more' => 'Flip to learn more',
+        'key_features' => 'Key Features',
+        'features_coming_soon' => 'Features coming soon',
+        'no_services_found' => 'No Services Found',
+        'try_different_search' => 'Try different search terms or reset filters',
+        'reset_filters' => 'Reset Filters',
+        'need_custom_solution' => 'Need a custom solution for your property?',
+        'contact_expert' => 'Contact an Expert',
+        'get_free_quote' => 'Get Free Quote',
+        'description' => 'Description',
+        'features_included' => 'Features Included',
+        'pricing' => 'Pricing',
+        'price_varies_note' => 'Prices may vary based on project size and requirements',
+        'ready_to_book' => 'Ready to Book?',
+        'ready_to_book_desc' => 'Our team is available 24/7 to assist you',
 
         // Service Names
         'building_cleaning' => 'Building Cleaning Services',
@@ -398,6 +416,8 @@ return [
 
         // Services
         'our_services' => 'خدماتنا',
+        'what_we_offer' => 'ما نقدمه',
+        'services_description' => 'خدمات فنية احترافية للعقارات السكنية والتجارية في دبي',
         'all_services' => 'جميع الخدمات',
         'residential' => 'سكني',
         'commercial' => 'تجاري',
@@ -406,6 +426,22 @@ return [
         'starting_from' => 'تبدأ من',
         'view_details' => 'عرض التفاصيل',
         'service_details' => 'تفاصيل الخدمة',
+        'search_services' => 'ابحث عن الخدمات...',
+        'flip_to_learn_more' => 'اقلب لمعرفة المزيد',
+        'key_features' => 'المميزات الرئيسية',
+        'features_coming_soon' => 'المميزات قريباً',
+        'no_services_found' => 'لم يتم العثور على خدمات',
+        'try_different_search' => 'جرب مصطلحات بحث مختلفة أو قم بإعادة تعيين الفلاتر',
+        'reset_filters' => 'إعادة تعيين الفلاتر',
+        'need_custom_solution' => 'هل تحتاج إلى حل مخصص لممتلكاتك؟',
+        'contact_expert' => 'اتصل بخبير',
+        'get_free_quote' => 'احصل على عرض سعر مجاني',
+        'description' => 'الوصف',
+        'features_included' => 'المميزات المتضمنة',
+        'pricing' => 'التسعير',
+        'price_varies_note' => 'قد تختلف الأسعار حسب حجم المشروع ومتطلباته',
+        'ready_to_book' => 'هل أنت مستعد للحجز؟',
+        'ready_to_book_desc' => 'فريقنا متاح على مدار الساعة لمساعدتك',
 
         // Service Names
         'building_cleaning' => 'خدمات تنظيف المباني والمساكن',
