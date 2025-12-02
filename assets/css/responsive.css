@@ -360,6 +360,71 @@ section {
     }
 }
 
+/* Contact Section Responsive */
+@media (max-width: 1023px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+    }
+
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-links-large {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-links-large {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .map-wrapper {
+        height: 300px;
+    }
+
+    .whatsapp-quick-action {
+        display: block;
+    }
+
+    .contact-form-card {
+        padding: var(--spacing-lg);
+    }
+
+    .areas-grid {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 479px) {
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hours-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+
+    .social-links-large {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Hide WhatsApp quick action on desktop */
+@media (min-width: 768px) {
+    .whatsapp-quick-action {
+        display: none;
+    }
+}
+
 /* ============================================================================
    EXTRA LARGE DEVICES (≥ 1280px)
    ============================================================================ */

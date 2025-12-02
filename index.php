@@ -215,42 +215,8 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 </section>
 
-<!-- Contact Section (Placeholder) -->
-<section id="contact" class="contact-section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title scroll-reveal">
-                <i class="fa-solid fa-envelope"></i>
-                <?php _e('contact_us'); ?>
-            </h2>
-        </div>
-        <div class="contact-content scroll-reveal">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <div>
-                        <strong><?php _e('phone'); ?></strong>
-                        <a href="tel:<?php echo WHATSAPP_NUMBER; ?>"><?php echo PHONE_DISPLAY; ?></a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <div>
-                        <strong><?php _e('email'); ?></strong>
-                        <a href="mailto:<?php echo ADMIN_EMAIL; ?>"><?php echo ADMIN_EMAIL; ?></a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-map-marker-alt"></i>
-                    <div>
-                        <strong><?php _e('address'); ?></strong>
-                        <span><?php echo BUSINESS_ADDRESS; ?></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!-- Contact Section -->
+<?php require_once __DIR__ . '/sections/contact.php'; ?>
 
 <?php
 // Include footer
