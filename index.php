@@ -146,20 +146,8 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 </section>
 
-<!-- Portfolio Section (Placeholder) -->
-<section id="portfolio" class="portfolio-section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title scroll-reveal">
-                <i class="fa-solid fa-briefcase"></i>
-                <?php _e('our_portfolio'); ?>
-            </h2>
-        </div>
-        <div class="portfolio-content scroll-reveal">
-            <p>Portfolio section content coming soon...</p>
-        </div>
-    </div>
-</section>
+<!-- Portfolio Section (Interactive) -->
+<?php require_once __DIR__ . '/sections/projects-portfolio.php'; ?>
 
 <!-- Contact Section -->
 <?php require_once __DIR__ . '/sections/contact.php'; ?>
