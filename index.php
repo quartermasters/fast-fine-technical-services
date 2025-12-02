@@ -137,6 +137,9 @@ require_once __DIR__ . '/includes/header.php';
 <!-- Portfolio Section (Interactive) -->
 <?php require_once __DIR__ . '/sections/projects-portfolio.php'; ?>
 
+<!-- Booking Calculator Section -->
+<?php require_once __DIR__ . '/sections/booking-calculator.php'; ?>
+
 <!-- Contact Section -->
 <?php require_once __DIR__ . '/sections/contact.php'; ?>
 

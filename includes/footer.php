@@ -216,8 +216,9 @@ if(!defined('FAST_FINE_APP')) {
 <script src="<?php echo assetUrl('js/main.js'); ?>"></script>
 <script src="<?php echo assetUrl('js/animations.js'); ?>"></script>
 <script src="<?php echo assetUrl('js/services.js'); ?>"></script>
-<parameter name="js/portfolio.js'); ?>"></script>
+<script src="<?php echo assetUrl('js/portfolio.js'); ?>"></script>
 <script src="<?php echo assetUrl('js/testimonials.js'); ?>"></script>
+<script src="<?php echo assetUrl('js/booking.js'); ?>"></script>
 
 <?php if(FEATURE_LIVE_CHAT): ?>
 <!-- WhatsApp Chat Widget Script -->
