@@ -392,9 +392,6 @@ For technical support:
 - Location: Dubai, United Arab Emirates
 
 ---
-
-🤖 **Generated with Claude Code** - https://claude.com/claude-code
-
 **Professional standards enforced: NO EMOJIS in production code - Professional Font Awesome icons only**
 
 Last Updated: 2025-12-02
