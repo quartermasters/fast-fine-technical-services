@@ -371,9 +371,19 @@ trackEvent('custom_event', {
 
 This is a private commercial project for Fast and Fine Technical Services FZE.
 
-## 📄 License
+## 💻 Development Credits
 
-Proprietary - All rights reserved by Fast and Fine Technical Services FZE
+**Developed by:** [Aliff](https://www.aliffcapital.com)
+
+Website design, development, and implementation by Aliff.
+
+## 📄 License & Copyright
+
+**Copyright © 2024 Fast and Fine Technical Services FZE**
+All rights reserved.
+
+**Development & Design:** [Aliff](https://www.aliffcapital.com)
+Proprietary software - Unauthorized copying, modification, or distribution is strictly prohibited.
 
 ## 🤝 Support
 
@@ -389,7 +399,10 @@ For technical support:
 - Location: Dubai, United Arab Emirates
 
 ---
+
+**Developed by [Aliff](https://www.aliffcapital.com)** | Professional Web Development & Design
+
 **Professional standards enforced: NO EMOJIS in production code - Professional Font Awesome icons only**
 
-Last Updated: 2025-12-02
+Last Updated: 2025-12-03
 Version: 1.0.0
