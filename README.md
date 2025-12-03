@@ -8,7 +8,6 @@ Professional technical services website for Fast and Fine Technical Services FZE
 
 **Contact:**
 - Phone: +971 52 739 8010
-- Email: info@fastandfine.com
 - WhatsApp: +971 52 739 8010
 - Location: Dubai, United Arab Emirates
 - Hours: 24/7 Available
@@ -379,16 +378,14 @@ Proprietary - All rights reserved by Fast and Fine Technical Services FZE
 ## 🤝 Support
 
 For technical support:
-- Email: support@fastandfine.com
 - Phone: +971 52 739 8010
 - WhatsApp: Available 24/7
 
 ## 📞 Contact
 
 **Fast and Fine Technical Services FZE**
-- Website: https://fastandfine.com
-- Email: info@fastandfine.com
 - Phone: +971 52 739 8010
+- WhatsApp: +971 52 739 8010
 - Location: Dubai, United Arab Emirates
 
 ---
