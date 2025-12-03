@@ -43,7 +43,7 @@ Website design, development, and implementation by Aliff.
 
 ## License & Copyright
 
-**Copyright © 2024 Fast and Fine Technical Services FZE**
+**Copyright © 2025 Fast and Fine Technical Services FZE**
 All rights reserved.
 
 **Development & Design:** [Aliff](https://www.aliffcapital.com)
