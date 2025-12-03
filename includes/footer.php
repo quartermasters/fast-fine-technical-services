@@ -31,8 +31,7 @@ if(!defined('FAST_FINE_APP')) {
                 <!-- Company Info -->
                 <div class="footer-col footer-about">
                     <div class="footer-logo">
-                        <img src="<?php echo assetUrl('images/logo-white.png'); ?>" alt="<?php echo SITE_NAME; ?>" class="footer-logo-img">
-                        <span class="footer-logo-text">Fast & Fine</span>
+                        <img src="<?php echo assetUrl('images/logo.png'); ?>" alt="<?php echo SITE_NAME; ?> - Professional Technical Services in Dubai" class="footer-logo-img" width="180" height="auto" loading="lazy">
                     </div>
                     <p class="footer-description">
                         <?php _e('site_tagline'); ?>
@@ -200,7 +199,7 @@ if(!defined('FAST_FINE_APP')) {
                 </div>
                 <div class="footer-powered">
                     <span><?php _e('powered_by'); ?> <i class="fa-solid fa-heart"></i></span>
-                    <a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a>
+                    <a href="https://www.aliffcapital.com" target="_blank" rel="noopener">Aliff</a>
                 </div>
             </div>
         </div>
@@ -218,6 +217,8 @@ if(!defined('FAST_FINE_APP')) {
     <script src="<?php echo assetUrl('build/app.min.js'); ?>"></script>
 <?php else: ?>
     <!-- Development: Individual JS Files -->
+    <script src="<?php echo assetUrl('js/lazy-loading.js'); ?>"></script>
+    <script src="<?php echo assetUrl('js/hero-conversion.js'); ?>"></script>
     <script src="<?php echo assetUrl('js/main.js'); ?>"></script>
     <script src="<?php echo assetUrl('js/services.js'); ?>"></script>
     <script src="<?php echo assetUrl('js/portfolio.js'); ?>"></script>

@@ -1,0 +1,867 @@
+/**
+ * Dubai Premium Hero Section Stylesheet
+ *
+ * Design: Clean, professional, premium positioning
+ * Focus: Brand building, trust, quality over price
+ * No pricing displayed on hero
+ *
+ * @package FastAndFine
+ * @version 3.0.0
+ */
+
+/* ============================================================================
+   HERO PREMIUM DUBAI - MAIN SECTION
+   ============================================================================ */
+
+.hero-premium-dubai {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #f9fafb 0%, #ffffff 50%, #f9fafb 100%);
+    padding: 140px 0 80px;
+    overflow: hidden;
+}
+
+/* Dubai Skyline Decoration */
+.dubai-skyline-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.dubai-skyline {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: skylineFadeIn 1.5s ease-out 0.3s forwards;
+}
+
+@keyframes skylineFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main Hero Content Container */
+.hero-content-premium {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================================================
+   TYPOGRAPHY - HEADLINES
+   ============================================================================ */
+
+.hero-title-main {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.hero-title-main .title-highlight {
+    display: block;
+    background: linear-gradient(135deg, #002D57 0%, #009FE3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle-premium {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: #6b7280;
+    margin-bottom: 4rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+/* ============================================================================
+   SERVICE ICONS GRID
+   ============================================================================ */
+
+.services-grid-premium {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-icon-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-icon-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--service-color);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.service-icon-card:hover {
+    border-color: var(--service-color);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px);
+}
+
+.service-icon-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Service Icon */
+.service-icon-large {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, var(--service-color), color-mix(in srgb, var(--service-color) 80%, black));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-icon-card:hover .service-icon-large {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 30px color-mix(in srgb, var(--service-color) 40%, transparent);
+}
+
+.service-icon-large i {
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+/* Service Name */
+.service-name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.service-icon-card:hover .service-name {
+    color: var(--service-color);
+}
+
+/* Service Description */
+.service-description {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Service Arrow */
+.service-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: var(--service-color);
+    border-radius: 50%;
+    color: #ffffff;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.service-icon-card:hover .service-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.service-arrow i {
+    font-size: 0.9rem;
+}
+
+/* ============================================================================
+   TRUST INDICATORS BAR
+   ============================================================================ */
+
+.trust-bar-premium {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem 2rem;
+    background: rgba(0, 45, 87, 0.04);
+    border-radius: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.trust-item-premium {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.trust-item-premium i {
+    font-size: 1.25rem;
+    color: #009FE3;
+}
+
+.trust-divider {
+    color: #d1d5db;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* ============================================================================
+   CALL TO ACTION BUTTONS
+   ============================================================================ */
+
+.hero-actions-premium {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.btn-premium {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.btn-premium i {
+    font-size: 1.2rem;
+}
+
+.btn-premium-primary {
+    background: linear-gradient(135deg, #002D57 0%, #004080 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 45, 87, 0.3);
+}
+
+.btn-premium-primary:hover {
+    background: linear-gradient(135deg, #004080 0%, #002D57 100%);
+    box-shadow: 0 8px 30px rgba(0, 45, 87, 0.4);
+    transform: translateY(-3px);
+}
+
+.btn-premium-secondary {
+    background: #ffffff;
+    color: #002D57;
+    border-color: #002D57;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.btn-premium-secondary:hover {
+    background: #002D57;
+    color: #ffffff;
+    border-color: #002D57;
+    transform: translateY(-3px);
+}
+
+/* ============================================================================
+   FEATURED IN / MEDIA SECTION
+   ============================================================================ */
+
+.featured-in-premium {
+    padding-top: 2rem;
+    border-top: 1px solid #e5e7eb;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.featured-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #9ca3af;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.media-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.media-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6b7280;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+}
+
+.media-logo:hover {
+    color: #002D57;
+    transform: translateY(-2px);
+}
+
+.media-logo i {
+    font-size: 1.5rem;
+    color: #009FE3;
+}
+
+/* ============================================================================
+   SCROLL INDICATOR
+   ============================================================================ */
+
+.scroll-indicator-premium {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #9ca3af;
+    animation: fadeInUp 1s ease-out 1.5s both;
+}
+
+.scroll-text {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.scroll-arrow-animated {
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.scroll-arrow-animated i {
+    font-size: 1.5rem;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* ============================================================================
+   STATS SECTION (BELOW HERO)
+   ============================================================================ */
+
+.stats-premium {
+    padding: 60px 0;
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+}
+
+.stats-grid-premium {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stat-card-premium {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: #f9fafb;
+    border-radius: 16px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.stat-card-premium:hover {
+    background: #ffffff;
+    border-color: #009FE3;
+    box-shadow: 0 8px 30px rgba(0, 159, 227, 0.15);
+    transform: translateY(-5px);
+}
+
+.stat-icon-premium {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #009FE3 0%, #0080b8 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.stat-card-premium:hover .stat-icon-premium {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.stat-icon-premium i {
+    font-size: 1.8rem;
+    color: #ffffff;
+}
+
+.stat-content-premium {
+    flex: 1;
+}
+
+.stat-number-premium {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #002D57;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-decimal {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.stat-label-premium {
+    font-size: 0.95rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .hero-premium-dubai {
+        padding: 120px 0 60px;
+    }
+
+    .services-grid-premium {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .trust-bar-premium {
+        gap: 1.5rem;
+        padding: 1.25rem 1.5rem;
+    }
+
+    .trust-item-premium {
+        font-size: 0.9rem;
+    }
+
+    .trust-divider {
+        display: none;
+    }
+
+    .hero-actions-premium {
+        gap: 1rem;
+    }
+
+    .btn-premium {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+    }
+
+    .stats-grid-premium {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+    .hero-premium-dubai {
+        padding: 100px 0 40px;
+        min-height: auto;
+    }
+
+    .dubai-skyline-container {
+        height: 80px;
+    }
+
+    .hero-title-main {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-subtitle-premium {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .services-grid-premium {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .service-icon-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .service-icon-large {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 1.25rem;
+    }
+
+    .service-icon-large i {
+        font-size: 2rem;
+    }
+
+    .service-name {
+        font-size: 1.2rem;
+    }
+
+    .service-description {
+        font-size: 0.9rem;
+    }
+
+    .trust-bar-premium {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .trust-item-premium {
+        font-size: 0.85rem;
+    }
+
+    .hero-actions-premium {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btn-premium {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 1.5rem;
+    }
+
+    .featured-in-premium {
+        padding-top: 1.5rem;
+    }
+
+    .media-logos {
+        gap: 1.5rem;
+    }
+
+    .media-logo {
+        font-size: 0.85rem;
+    }
+
+    .media-logo i {
+        font-size: 1.25rem;
+    }
+
+    .scroll-indicator-premium {
+        bottom: 1rem;
+    }
+
+    .scroll-text {
+        font-size: 0.75rem;
+    }
+
+    .stats-premium {
+        padding: 40px 0;
+    }
+
+    .stats-grid-premium {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .stat-card-premium {
+        padding: 1.5rem;
+    }
+
+    .stat-icon-premium {
+        width: 50px;
+        height: 50px;
+    }
+
+    .stat-icon-premium i {
+        font-size: 1.5rem;
+    }
+
+    .stat-number-premium {
+        font-size: 2rem;
+    }
+
+    .stat-label-premium {
+        font-size: 0.85rem;
+    }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .hero-title-main {
+        font-size: 1.75rem;
+    }
+
+    .hero-subtitle-premium {
+        font-size: 0.95rem;
+    }
+
+    .service-icon-card {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .btn-premium {
+        padding: 0.875rem 1.25rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* ============================================================================
+   RTL (ARABIC) SUPPORT
+   ============================================================================ */
+
+[dir="rtl"] .service-arrow {
+    transform: translateX(10px) rotate(180deg);
+}
+
+[dir="rtl"] .service-icon-card:hover .service-arrow {
+    transform: translateX(0) rotate(180deg);
+}
+
+[dir="rtl"] .scroll-indicator-premium {
+    direction: rtl;
+}
+
+[dir="rtl"] .trust-bar-premium {
+    direction: rtl;
+}
+
+/* ============================================================================
+   DARK MODE SUPPORT
+   ============================================================================ */
+
+[data-theme="dark"] .hero-premium-dubai {
+    background: linear-gradient(180deg, #1f2937 0%, #111827 50%, #1f2937 100%);
+}
+
+[data-theme="dark"] .hero-title-main {
+    color: #f9fafb;
+}
+
+[data-theme="dark"] .hero-subtitle-premium {
+    color: #9ca3af;
+}
+
+[data-theme="dark"] .service-icon-card {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+[data-theme="dark"] .service-icon-card:hover {
+    background: #111827;
+}
+
+[data-theme="dark"] .service-name {
+    color: #f9fafb;
+}
+
+[data-theme="dark"] .service-description {
+    color: #9ca3af;
+}
+
+[data-theme="dark"] .trust-bar-premium {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .trust-item-premium {
+    color: #f9fafb;
+}
+
+[data-theme="dark"] .btn-premium-secondary {
+    background: transparent;
+    color: #f9fafb;
+    border-color: #f9fafb;
+}
+
+[data-theme="dark"] .btn-premium-secondary:hover {
+    background: #f9fafb;
+    color: #111827;
+}
+
+[data-theme="dark"] .featured-in-premium {
+    border-top-color: #374151;
+}
+
+[data-theme="dark"] .media-logo {
+    color: #9ca3af;
+}
+
+[data-theme="dark"] .media-logo:hover {
+    color: #f9fafb;
+}
+
+[data-theme="dark"] .stats-premium {
+    background: #111827;
+    border-top-color: #374151;
+}
+
+[data-theme="dark"] .stat-card-premium {
+    background: #1f2937;
+}
+
+[data-theme="dark"] .stat-card-premium:hover {
+    background: #111827;
+}
+
+[data-theme="dark"] .stat-number-premium {
+    color: #f9fafb;
+}
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+
+@media print {
+    .hero-premium-dubai {
+        background: #ffffff;
+        min-height: auto;
+        padding: 2cm 0;
+    }
+
+    .dubai-skyline-container,
+    .scroll-indicator-premium,
+    .hero-actions-premium {
+        display: none;
+    }
+
+    .service-icon-card {
+        page-break-inside: avoid;
+    }
+
+    .stats-premium {
+        page-break-before: always;
+    }
+}
+
+/* ============================================================================
+   ACCESSIBILITY
+   ============================================================================ */
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .service-icon-card {
+        border-width: 3px;
+    }
+
+    .btn-premium {
+        border-width: 3px;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .dubai-skyline,
+    .service-icon-card,
+    .service-icon-large,
+    .btn-premium,
+    .stat-card-premium,
+    .scroll-arrow-animated,
+    .scroll-indicator-premium {
+        animation: none;
+        transition: none;
+    }
+
+    .service-icon-card:hover,
+    .btn-premium:hover,
+    .stat-card-premium:hover {
+        transform: none;
+    }
+}
+
+/* Focus Styles for Keyboard Navigation */
+.service-card-link:focus-visible,
+.btn-premium:focus-visible {
+    outline: 3px solid #009FE3;
+    outline-offset: 3px;
+    border-radius: 20px;
+}
+
+/* ============================================================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================================================ */
+
+/* GPU Acceleration for Animations */
+.service-icon-card,
+.service-icon-large,
+.btn-premium,
+.stat-icon-premium {
+    will-change: transform;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}

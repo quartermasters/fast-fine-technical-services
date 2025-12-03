@@ -37,84 +37,19 @@ if (ANALYTICS_ENABLED) {
 
 // Include header
 require_once __DIR__ . '/includes/header.php';
+
+// Include Dubai Premium Hero (Concept 2)
+require_once __DIR__ . '/sections/hero-premium-dubai.php';
+
+// OLD: High-conversion hero (commented out - replaced with Premium Dubai concept)
+// require_once __DIR__ . '/sections/hero-conversion.php';
+
+// Include secondary services showcase
+require_once __DIR__ . '/sections/secondary-services.php';
 ?>
 
-<!-- Hero Section -->
-<section id="home" class="hero-section">
-    <div class="hero-background">
-        <div class="particles-container" id="particles"></div>
-    </div>
-
-    <div class="container">
-        <div class="hero-content scroll-reveal">
-            <h1 class="hero-title">
-                <?php _e('hero_title'); ?>
-            </h1>
-            <p class="hero-subtitle">
-                <?php _e('hero_subtitle'); ?>
-            </p>
-            <div class="hero-cta">
-                <a href="#booking" class="btn btn-primary btn-lg">
-                    <i class="fa-solid fa-calendar-check"></i>
-                    <span><?php _e('hero_cta_primary'); ?></span>
-                </a>
-                <a href="#quote" class="btn btn-outline btn-lg">
-                    <i class="fa-solid fa-calculator"></i>
-                    <span><?php _e('hero_cta_secondary'); ?></span>
-                </a>
-            </div>
-            <div class="hero-features">
-                <div class="feature-badge">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <span><?php _e('certified_experts'); ?></span>
-                </div>
-                <div class="feature-badge">
-                    <i class="fa-solid fa-clock"></i>
-                    <span><?php _e('available_24_7'); ?></span>
-                </div>
-                <div class="feature-badge">
-                    <i class="fa-solid fa-award"></i>
-                    <span><?php _e('satisfaction_guarantee'); ?></span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Statistics -->
-        <div class="hero-stats">
-            <div class="stat-item scroll-reveal delay-100">
-                <i class="fa-solid fa-briefcase icon-pulse"></i>
-                <div class="stat-content">
-                    <span class="stat-number" data-count="15">0</span>
-                    <span class="stat-label"><?php _e('years_experience'); ?></span>
-                </div>
-            </div>
-            <div class="stat-item scroll-reveal delay-200">
-                <i class="fa-solid fa-users icon-pulse"></i>
-                <div class="stat-content">
-                    <span class="stat-number" data-count="5000">0</span>
-                    <span class="stat-label"><?php _e('happy_clients'); ?></span>
-                </div>
-            </div>
-            <div class="stat-item scroll-reveal delay-300">
-                <i class="fa-solid fa-check-circle icon-pulse"></i>
-                <div class="stat-content">
-                    <span class="stat-number" data-count="12000">0</span>
-                    <span class="stat-label"><?php _e('projects_completed'); ?></span>
-                </div>
-            </div>
-            <div class="stat-item scroll-reveal delay-400">
-                <i class="fa-solid fa-wrench icon-pulse"></i>
-                <div class="stat-content">
-                    <span class="stat-number" data-count="9">0</span>
-                    <span class="stat-label"><?php _e('services_offered'); ?></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Services Section (Interactive) -->
-<?php require_once __DIR__ . '/sections/services-interactive.php'; ?>
+<!-- Services Section (Interactive) - Now hidden or repurposed -->
+<?php // require_once __DIR__ . '/sections/services-interactive.php'; ?>
 
 <!-- About Section (Placeholder) -->
 <section id="about" class="about-section">

@@ -115,8 +115,10 @@ foreach ($projects as $project) {
                         <!-- Project Image -->
                         <div class="portfolio-image">
                             <img src="<?php echo escapeHTML($project['main_image']); ?>"
-                                 alt="<?php echo escapeHTML($title); ?>"
+                                 alt="<?php echo escapeHTML($title); ?> - <?php echo escapeHTML($serviceName); ?> project in <?php echo escapeHTML($project['location']); ?>"
                                  loading="lazy"
+                                 width="600"
+                                 height="400"
                                  class="project-img">
 
                             <!-- Overlay -->

@@ -6,7 +6,9 @@
 # ============================================================================
 
 # Configuration files with sensitive data
+# Note: Copy config.example.php to config.php and update with your settings
 config.php
+config.local.php
 .env
 .env.*
 !.env.example
@@ -71,11 +73,11 @@ cache/
 *.cache
 .cache/
 
-# Compiled assets
+# Compiled assets (allow assets/build/ for deployment)
 /assets/dist/
-/assets/build/
-*.min.css
-*.min.js
+# /assets/build/  # Uncommented to allow build files in repo
+# *.min.css       # Uncommented to allow minified CSS
+# *.min.js        # Uncommented to allow minified JS
 *.map
 
 # Redis cache files

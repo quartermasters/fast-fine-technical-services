@@ -990,6 +990,16 @@ function formatFileSize($bytes) {
 }
 
 /**
+ * Alias for formatFileSize (compatibility)
+ *
+ * @param int $bytes
+ * @return string
+ */
+function formatBytes($bytes) {
+    return formatFileSize($bytes);
+}
+
+/**
  * Check if site is in maintenance mode
  *
  * @return bool

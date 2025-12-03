@@ -107,8 +107,10 @@ if ($totalReviews > 0) {
                                 <div class="client-avatar">
                                     <?php if (!empty($testimonial['client_photo'])): ?>
                                         <img src="<?php echo escapeHTML($testimonial['client_photo']); ?>"
-                                             alt="<?php echo escapeHTML($testimonial['client_name']); ?>"
-                                             loading="lazy">
+                                             alt="<?php echo escapeHTML($testimonial['client_name']); ?> - Verified Customer"
+                                             loading="lazy"
+                                             width="80"
+                                             height="80">
                                     <?php else: ?>
                                         <div class="avatar-placeholder">
                                             <?php echo strtoupper(substr($testimonial['client_name'], 0, 1)); ?>

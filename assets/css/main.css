@@ -448,7 +448,7 @@ input, textarea, select {
 
 .nav-menu {
     display: flex;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
     align-items: center;
 }
 
@@ -456,11 +456,13 @@ input, textarea, select {
     display: flex;
     align-items: center;
     gap: var(--spacing-xs);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.75rem;
     color: var(--text-primary);
+    font-size: var(--text-sm);
     font-weight: var(--font-medium);
     border-radius: var(--radius-md);
     transition: all var(--transition-fast);
+    white-space: nowrap;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -471,6 +473,11 @@ input, textarea, select {
 .header-cta {
     display: flex;
     gap: var(--spacing-sm);
+}
+
+.header-cta .btn {
+    padding: 0.5rem 1rem;
+    font-size: var(--text-sm);
 }
 
 /* Language Switcher */

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
@@ -18,6 +19,9 @@
         <lastmod>2025-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fastandfine.com/?lang=en"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fastandfine.com/?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://fastandfine.com/"/>
     </url>
 
     <!-- Main Sections -->
@@ -26,6 +30,9 @@
         <lastmod>2025-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fastandfine.com/#home?lang=en"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fastandfine.com/#home?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://fastandfine.com/#home"/>
     </url>
 
     <url>
@@ -33,6 +40,9 @@
         <lastmod>2025-12-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fastandfine.com/#services?lang=en"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fastandfine.com/#services?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://fastandfine.com/#services"/>
     </url>
 
     <url>
@@ -40,6 +50,9 @@
         <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fastandfine.com/#about?lang=en"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fastandfine.com/#about?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://fastandfine.com/#about"/>
     </url>
 
     <url>
@@ -47,6 +60,9 @@
         <lastmod>2025-12-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fastandfine.com/#portfolio?lang=en"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fastandfine.com/#portfolio?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://fastandfine.com/#portfolio"/>
     </url>
 
     <url>
@@ -54,6 +70,9 @@
         <lastmod>2025-12-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fastandfine.com/#testimonials?lang=en"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fastandfine.com/#testimonials?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://fastandfine.com/#testimonials"/>
     </url>
 
     <url>
@@ -61,6 +80,9 @@
         <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fastandfine.com/#booking?lang=en"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fastandfine.com/#booking?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://fastandfine.com/#booking"/>
     </url>
 
     <url>
@@ -68,6 +90,9 @@
         <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fastandfine.com/#contact?lang=en"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fastandfine.com/#contact?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://fastandfine.com/#contact"/>
     </url>
 
     <!-- Service Pages (if you create individual service pages in the future) -->

@@ -23,6 +23,7 @@ require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/functions.php';
 require_once __DIR__ . '/security.php';
 require_once __DIR__ . '/translations.php';
+require_once __DIR__ . '/schema-markup.php';
 
 $currentLang = getCurrentLanguage();
 $isRTL = isRTL();
@@ -39,20 +40,43 @@ $isRTL = isRTL();
     <meta name="description" content="<?php echo SEO_DESCRIPTION; ?>">
     <meta name="keywords" content="<?php echo SEO_KEYWORDS; ?>">
     <meta name="author" content="<?php echo SEO_AUTHOR; ?>">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="<?php echo SITE_URL . $_SERVER['REQUEST_URI']; ?>">
+
+    <!-- Language & Regional -->
+    <meta name="language" content="<?php echo $currentLang === 'ar' ? 'Arabic' : 'English'; ?>">
+    <link rel="alternate" hreflang="en" href="<?php echo SITE_URL; ?>?lang=en">
+    <link rel="alternate" hreflang="ar" href="<?php echo SITE_URL; ?>?lang=ar">
+    <link rel="alternate" hreflang="x-default" href="<?php echo SITE_URL; ?>">
+
+    <!-- Geo Targeting -->
+    <meta name="geo.region" content="AE-DU">
+    <meta name="geo.placename" content="Dubai">
+    <meta name="geo.position" content="25.2048;55.2708">
+    <meta name="ICBM" content="25.2048, 55.2708">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="<?php echo SITE_URL; ?>">
+    <meta property="og:url" content="<?php echo SITE_URL . $_SERVER['REQUEST_URI']; ?>">
     <meta property="og:title" content="<?php echo SEO_TITLE; ?>">
     <meta property="og:description" content="<?php echo SEO_DESCRIPTION; ?>">
     <meta property="og:image" content="<?php echo SEO_OG_IMAGE; ?>">
+    <meta property="og:image:alt" content="<?php echo SITE_NAME; ?> - Professional Technical Services in Dubai">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="<?php echo SITE_NAME; ?>">
+    <meta property="og:locale" content="<?php echo $currentLang === 'ar' ? 'ar_AE' : 'en_US'; ?>">
+    <meta property="og:locale:alternate" content="<?php echo $currentLang === 'ar' ? 'en_US' : 'ar_AE'; ?>">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="<?php echo SITE_URL; ?>">
-    <meta property="twitter:title" content="<?php echo SEO_TITLE; ?>">
-    <meta property="twitter:description" content="<?php echo SEO_DESCRIPTION; ?>">
-    <meta property="twitter:image" content="<?php echo SEO_OG_IMAGE; ?>">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="<?php echo SITE_URL . $_SERVER['REQUEST_URI']; ?>">
+    <meta name="twitter:title" content="<?php echo SEO_TITLE; ?>">
+    <meta name="twitter:description" content="<?php echo SEO_DESCRIPTION; ?>">
+    <meta name="twitter:image" content="<?php echo SEO_OG_IMAGE; ?>">
+    <meta name="twitter:image:alt" content="<?php echo SITE_NAME; ?> - Professional Technical Services in Dubai">
+    <meta name="twitter:creator" content="@fastandfine">
+    <meta name="twitter:site" content="@fastandfine">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo assetUrl('images/favicon-32x32.png'); ?>">
@@ -84,6 +108,10 @@ $isRTL = isRTL();
         <!-- Development: Individual CSS Files -->
         <link rel="stylesheet" href="<?php echo assetUrl('css/main.css'); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('css/sections.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('css/breadcrumb.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('css/hero-premium-dubai.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('css/portfolio-fixes.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('css/footer-contrast-fix.css'); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('css/animations.css'); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('css/responsive.css'); ?>">
     <?php endif; ?>
@@ -102,82 +130,10 @@ $isRTL = isRTL();
     </script>
     <?php endif; ?>
 
-    <!-- Schema.org JSON-LD Markup for LocalBusiness -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "@id": "<?php echo SITE_URL; ?>",
-        "name": "<?php echo SITE_NAME; ?>",
-        "alternateName": "Fast & Fine",
-        "url": "<?php echo SITE_URL; ?>",
-        "logo": "<?php echo assetUrl('images/logo.png'); ?>",
-        "image": "<?php echo SEO_OG_IMAGE; ?>",
-        "description": "<?php echo SEO_DESCRIPTION; ?>",
-        "slogan": "<?php echo SITE_TAGLINE; ?>",
-        "telephone": "<?php echo WHATSAPP_NUMBER; ?>",
-        "email": "<?php echo ADMIN_EMAIL; ?>",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Dubai",
-            "addressRegion": "Dubai",
-            "addressCountry": "AE"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "25.2048",
-            "longitude": "55.2708"
-        },
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday"
-                ],
-                "opens": "00:00",
-                "closes": "23:59"
-            }
-        ],
-        "sameAs": [
-            <?php if(FACEBOOK_URL): ?>"<?php echo FACEBOOK_URL; ?>",<?php endif; ?>
-            <?php if(INSTAGRAM_URL): ?>"<?php echo INSTAGRAM_URL; ?>",<?php endif; ?>
-            <?php if(TWITTER_URL): ?>"<?php echo TWITTER_URL; ?>",<?php endif; ?>
-            <?php if(LINKEDIN_URL): ?>"<?php echo LINKEDIN_URL; ?>",<?php endif; ?>
-            "https://wa.me/<?php echo str_replace(['+', '-', ' '], '', WHATSAPP_NUMBER); ?>"
-        ],
-        "priceRange": "AED 100 - AED 5000",
-        "paymentAccepted": "Cash, Credit Card, Bank Transfer",
-        "currenciesAccepted": "AED",
-        "areaServed": {
-            "@type": "City",
-            "name": "Dubai"
-        },
-        "serviceType": [
-            "Building Cleaning",
-            "Carpentry Services",
-            "Plumbing Services",
-            "Air Conditioning Services",
-            "Electromechanical Services",
-            "Painting Services",
-            "Electrical Services",
-            "Gypsum and Partition Services",
-            "Tiling Services"
-        ],
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "250",
-            "bestRating": "5",
-            "worstRating": "1"
-        }
-    }
-    </script>
+    <?php
+    // Output comprehensive Schema.org structured data
+    outputSchemaMarkup(true, true);
+    ?>
 </head>
 <body class="<?php echo $isRTL ? 'rtl' : 'ltr'; ?>" data-theme="light">
 
@@ -241,12 +197,8 @@ $isRTL = isRTL();
         <div class="container">
             <nav class="navbar" role="navigation">
                 <!-- Logo -->
-                <a href="<?php echo siteUrl(); ?>" class="logo">
-                    <img src="<?php echo assetUrl('images/logo.png'); ?>" alt="<?php echo SITE_NAME; ?>" class="logo-img">
-                    <span class="logo-text">
-                        <strong>Fast & Fine</strong>
-                        <small><?php _e('site_tagline'); ?></small>
-                    </span>
+                <a href="<?php echo siteUrl(); ?>" class="logo" aria-label="<?php echo SITE_NAME; ?> - Home">
+                    <img src="<?php echo assetUrl('images/logo.png'); ?>" alt="<?php echo SITE_NAME; ?> - Professional Technical Services in Dubai" class="logo-img" width="180" height="auto" loading="eager">
                 </a>
 
                 <!-- Desktop Navigation -->
@@ -320,8 +272,7 @@ $isRTL = isRTL();
     <div class="mobile-menu">
         <div class="mobile-menu-header">
             <div class="logo">
-                <img src="<?php echo assetUrl('images/logo.png'); ?>" alt="<?php echo SITE_NAME; ?>" class="logo-img">
-                <span class="logo-text">Fast & Fine</span>
+                <img src="<?php echo assetUrl('images/logo.png'); ?>" alt="<?php echo SITE_NAME; ?> - Professional Technical Services in Dubai" class="logo-img" width="140" height="auto" loading="lazy">
             </div>
             <button class="mobile-menu-close" id="mobileMenuClose">
                 <i class="fa-solid fa-times"></i>
